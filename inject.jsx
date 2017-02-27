@@ -6,4 +6,7 @@
  */
 import React, {Component, PropTypes} from 'react'
 
-export default toInjectProps => Comp => props => <Comp {...{...toInjectProps, ...props}} />
+export default toInjectProps => Comp =>
+    function InjectedComponent(props) {
+        return <Comp {...{...toInjectProps, ...props}} />
+    }
