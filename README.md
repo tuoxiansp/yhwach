@@ -2,6 +2,8 @@
 更简单的 React 状态管理库。  
 
 ## 设计理念
+![](https://github.com/tuoxiansp/yhwach/blob/master/yhwach-diagram.png?raw=true)
+  
 任何 React 程序都由一个个组件拼装而成。  
 
 在 yhwach 中，container 作为一个特殊的组件，从 store 获取最新的状态，并同步更新到 component。  
