@@ -5,13 +5,13 @@
  * init: @type - Function 初始化函数, 参数为传入的 props, 返回一个 store 对象
  * select: @type - Function props 选择器函数, 有三个参数
  * 1. storedProps(store 中存储的 props),
- * 2. props(传入的 props),
- * 3. dispatch(函数, 修改 store 的值)
+ * 2. dispatch(函数, 修改 store 的值),
+ * 3. props(传入的 props)
  *
  * 使用:
  * const containedComponent = container(
  *     props => {return store},
- *     (storedProps, props, dispatch) => {
+ *     (storedProps, dispatch, props) => {
  *         return {
  *             value: storedProps.value,
  *             onInit: () => {
