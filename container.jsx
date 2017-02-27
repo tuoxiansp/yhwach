@@ -52,23 +52,27 @@ class Controller extends Component {
         const {storedProps} = this.state
         const {_select, _comp, _init, ...rest} = this.props
         const props = _select(storedProps, this.store.dispatch, rest)
-        const InjectedComponent = inject(props)(_comp)
 
-        return <InjectedComponent/>
+        return React.createElement(
+            _comp,
+            props
+        )
     }
 }
 
-const container = (
+const container = function container(
 
     init,
     select = (storedProps, dispatch, props) => ({...storedProps})
 
-) => comp => inject({
+) {
+    return comp => inject({
 
-    _init: init,
-    _select: select,
-    _comp: comp
+        _init: init,
+        _select: select,
+        _comp: comp
 
-})(Controller)
+    })(Controller)
+}
 
 export default container
