@@ -57,3 +57,6 @@
         document.body
     )
 ```
+  
+## API
+- [API 文档](https://github.com/tuoxiansp/yhwach/blob/master/api.md)
