@@ -8,5 +8,5 @@ import React, {Component, PropTypes} from 'react'
 
 export default toInjectProps => Comp =>
     function InjectedComponent(props) {
-        return <Comp {...{...toInjectProps, ...props}} />
+    	return React.createElement(Comp, {...{...toInjectProps, ...props}})
     }
